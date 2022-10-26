@@ -31,7 +31,7 @@ def sum_to_n? arr, n
   #define bool sum
   sum = false
 
-  # conditional testing for empty array
+  # conditional testing for empty array and if array only has one value
   if(arr.length() == 0)
     return false
   elsif(arr.length() == 1)
@@ -64,7 +64,7 @@ def starts_with_consonant? s
   #declare bool
   startsWConsonant = false
 
-  #test with conditional
+  #test with conditional and regular expression 
   if(s.match?(/^[bcdfgjklmnpqstvxzhrwyBDCFGJKLMNPQSTVXZHRWY]/))
     startsWConsonant = true
   end
@@ -101,7 +101,7 @@ class BookInStock
   # constructor for book class with isbn and price
   def initialize(isbn, price)
 
-    # raise argument error if isbn is empty or price <= 0
+    # raise argument error if isbn is empty or price <= 0 or if wrong type
     if(isbn.class == String && (price.class == Float || price.class == Integer))
       if(isbn.length() != 0 && price > 0)
         @isbn = isbn
